@@ -3,6 +3,7 @@
         "mushan.vscode-paste-image",
         "shopify.theme-check-vscode",
         "yzhang.markdown-all-in-one",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "mervin.markdown-formatter"
     ]
 }

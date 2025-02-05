@@ -7,7 +7,7 @@ tags: [SI, GIT]
 image: /assets/blog-images/posts/2024-01-31-Implementing GIT in an SI Company/title.png
 ---
 
-SI 회사에서 `Git`을 도입한지 1년이 지났다 `Svn` ➡️ `Git`으로 전환하는 과정에 대한 경험을 공유하고자 한다.
+SI 회사에서 `Git` 을 도입한지 1년이 지났다 `Svn` ➡️ `Git` 으로 전환하는 과정에 대한 경험을 공유하고자 한다.
 
 ---
 
