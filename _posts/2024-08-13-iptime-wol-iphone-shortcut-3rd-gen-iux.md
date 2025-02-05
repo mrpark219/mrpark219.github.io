@@ -8,6 +8,7 @@ image: /assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-i
 ---
 
 ## 단축어 공유
+
 [ipTIME 업데이트 공지](https://iptime.com/iptime/?page_id=16&uid=25871&mod=documen)
 
 2024년 7월 16일 iptime 공유기 펌웨어 버전이 15버전으로 업데이트 되었다.(글을 작성하고 있는 지금은\[2024-08-13] 15.01.0 버전이다.) 단순히 UI만 바뀐 것이 아니라 사이트 접속 URL, 기능 호출 URL, 기능 호출 방식이 변경되었기 때문에 그에 맞춰 WOL 단축어를 개발하였다.
@@ -18,6 +19,7 @@ image: /assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-i
 사용하면서 불편한 점이나 오류가 발생한다면 댓글 혹은 깃허브 이슈로 제보 부탁드립니다.
 
 ## 사용법🛠️
+
 ### 1. 단축어 추가 링크를 클릭하면 단축어 앱이 열리며 해당 화면이 나타난다. 단축어 설정 버튼을 터치한다.(안 열릴 시 사파리로 링크 열기)
 
 ![](/assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/2025-02-02-23-38-57.png)
