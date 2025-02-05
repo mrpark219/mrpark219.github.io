@@ -1,10 +1,10 @@
 ---
 title: ⚙️ 유클리드 호제법(최대공약수)
 date: 2025-02-04 00:45 +0900
-last_modified_at: 2025-02-04 00:45 +0900
+last_modified_at: 2025-02-05 23:13 +0900
 categories: [알고리즘]
 tags: [알고리즘, 개념]
-image:
+image: /assets/blog-images/posts/2025-02-04-gcd-duclidean-algorithm/title.png
 ---
 
 > **유클리드 호제법**: 기원전 3세기 경의 수학자 유클리드가 만든 **최대공약수**를 구하는 알고리즘이다. 유클리드 호제법은 두 수의 최대공약수를 구할 때, 큰 수를 작은 수로 나누고 나머지를 반복적으로 대체하여 계산한다.
@@ -62,6 +62,7 @@ fun main() {
 ```
 
 ### 재귀 방식
+
 ```kotlin
 fun gcdRecursive(a: Int, b: Int): Int {
     return if(b == 0) a else gcdRecursive(b, a % b)
@@ -83,5 +84,6 @@ fun main() {
 - **반복문 방식**은 스택을 사용하지 않으므로 **안정적**이다.
 
 ## 🔥 정리
+
 - 유클리드 호제법을 사용하면 O(log N) 시간 복잡도로 최대공약수를 구할 수 있다.
 - 반복문과 재귀 방식이 있으며, 실행 속도는 비슷하지만 재귀 호출이 깊어지면 스택 오버플로우 위험이 있다.
