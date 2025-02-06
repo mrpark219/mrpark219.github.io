@@ -4,7 +4,7 @@ date: 2025-02-04 00:45 +0900
 last_modified_at: 2025-02-05 23:13 +0900
 categories: [알고리즘]
 tags: [알고리즘, 개념]
-image: /assets/blog-images/posts/2025-02-04-gcd-duclidean-algorithm/title.png
+image: /assets/blog-images/posts/2025-02-04-gcd-euclidean-algorithm/title.png
 ---
 
 > **유클리드 호제법**: 기원전 3세기 경의 수학자 유클리드가 만든 **최대공약수**를 구하는 알고리즘이다. 유클리드 호제법은 두 수의 최대공약수를 구할 때, 큰 수를 작은 수로 나누고 나머지를 반복적으로 대체하여 계산한다.
