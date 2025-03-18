@@ -8,7 +8,7 @@
         "*.html": "liquid"
     },
     "[markdown]": {
-        "editor.defaultFormatter": "mervin.markdown-formatter"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[html][liquid]": {
         "editor.defaultFormatter": "Shopify.theme-check-vscode"
