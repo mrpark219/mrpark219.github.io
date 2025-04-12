@@ -7,7 +7,7 @@ tags: [단축어, 아이폰]
 image: /assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/title.png
 ---
 
-## 단축어 공유
+## 1️⃣ 단축어 공유
 
 [ipTIME 업데이트 공지](https://iptime.com/iptime/?page_id=16&uid=25871&mod=documen)
 
@@ -18,7 +18,14 @@ image: /assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-i
 [깃허브 저장소 링크](https://github.com/mrpark219/ipTIME-WOL)
 사용하면서 불편한 점이나 오류가 발생한다면 댓글 혹은 깃허브 이슈로 제보 부탁드립니다.
 
-## 사용법🛠️
+> 2025.04.12 업데이트
+>
+> 기존과 동일한 방식으로 사용하지만, 6번 단계 (목록에서 PC를 선택하는 단계)를 생략하고
+> 가장 위에 있는 하나의 PC에 대해 바로 WOL이 실행되도록 구성되었다.
+>
+> [단축어 추가 링크](https://www.icloud.com/shortcuts/8fd0216e73734001b87fdb25362d6424) - 추가되지 않는다면 사파리 브라우저를 사용하세요.
+
+## 2️⃣ 사용법🛠️
 
 ### 1. 단축어 추가 링크를 클릭하면 단축어 앱이 열리며 해당 화면이 나타난다. 단축어 설정 버튼을 터치한다.(안 열릴 시 사파리로 링크 열기)
 
@@ -52,7 +59,7 @@ ipTIME DDNS 기능을 사용 중이라면 DDNS 주소와 외부 접속 포트 �
 
 ---
 
-## WOL 단축어 오류 해결 방법🚨
+## 3️⃣ WOL 단축어 오류 해결 방법🚨
 
 ### 1. 단축어가 리치 텍스트을(를) 사전(으)로 변환할 수 없기 때문에 사전 값 가져오기에 실패했습니다.
 
