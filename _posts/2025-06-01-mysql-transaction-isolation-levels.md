@@ -3,7 +3,7 @@ title: MySQL 트랜잭션 격리 수준(Isolation Level)
 date: 2025-06-04 00:30 +0900
 categories: [백엔드]
 tags: [MySQL, 트랜잭션]
-image: /assets/blog-images/posts/2025-06-01-mysql-transaction-isolation-levels/2025-06-04-00-27-20.png
+image: /assets/blog-images/posts/2025-06-01-mysql-transaction-isolation-levels/2025-06-04-00-34-50.png
 mermaid: true
 ---
 
