@@ -4,7 +4,7 @@ date: 2026-01-02 20:35:00 +0900
 last_modified_at: 2026-01-02 20:35:00 +0900
 categories: [회고]
 tags: [회고]
-image: /assets/blog-images/posts/2024-12-31-2024_retrospective/title.png
+image: /assets/blog-images/posts/2026-01-02-2025_retrospective/title.png
 ---
 
 ## 1. 생각보다 길었던 공백 🕰️
