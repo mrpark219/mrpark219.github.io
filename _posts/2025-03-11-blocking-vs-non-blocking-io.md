@@ -1,9 +1,10 @@
 ---
 title: Blocking I/O와 Non-Blocking I/O
 date: 2025-03-11 17:36 +0900
+description: Blocking I/O와 Non-Blocking I/O의 차이, 멀티스레드와의 관계를 예시로 비교.
 categories: [백엔드]
-tags: [BlockingIO, NonBlockingIO]
-image: /assets/blog-images/posts/2025-03-11-blocking-io-vs-nonblocking-io/2025-03-13-13-52-17.png
+tags: [백엔드, 동시성, io]
+image: /assets/blog-images/posts/2025-03-11-blocking-vs-non-blocking-io/2025-03-13-13-52-17.png
 mermaid: true
 ---
 
@@ -96,7 +97,7 @@ sequenceDiagram
 - Blocking I/O와 Non-Blocking I/O 예제를 코드로 구현하는 과정이다.
 - IntelliJ, Java 17, Spring Webflux를 사용한다.
 
-![](/assets/blog-images/posts/2025-03-11-blocking-io-vs-nonblocking-io/2025-03-12-15-37-20.png)
+![](/assets/blog-images/posts/2025-03-11-blocking-vs-non-blocking-io/2025-03-12-15-37-20.png)
 
 1. Empty Project를 생성한다.
 
@@ -104,15 +105,15 @@ sequenceDiagram
 
 - 클라이언트의 요청을 받아 API Server2, API Server3에 요청을 보내고 응답을 받아 가공 후 클라이언트에게 반환한다.
 
-![](/assets/blog-images/posts/2025-03-11-blocking-io-vs-nonblocking-io/2025-03-12-15-38-56.png)
+![](/assets/blog-images/posts/2025-03-11-blocking-vs-non-blocking-io/2025-03-12-15-38-56.png)
 
 1. 생성된 `Empty Project`를 우클릭하고 `New` -> `Module`를 클릭한다.
 
-![](/assets/blog-images/posts/2025-03-11-blocking-io-vs-nonblocking-io/2025-03-12-15-36-14.png) 2. SpringBoot를 클릭하고 Name에 `api-server-1`을 입력한다. Language는 `Java`, Type은 `Gradle-Groovy`를 선택한다.
+![](/assets/blog-images/posts/2025-03-11-blocking-vs-non-blocking-io/2025-03-12-15-36-14.png) 2. SpringBoot를 클릭하고 Name에 `api-server-1`을 입력한다. Language는 `Java`, Type은 `Gradle-Groovy`를 선택한다.
 
-![](/assets/blog-images/posts/2025-03-11-blocking-io-vs-nonblocking-io/2025-03-12-15-41-20.png) 3. `Spring Reactive Web` 의존성을 추가해준다.
+![](/assets/blog-images/posts/2025-03-11-blocking-vs-non-blocking-io/2025-03-12-15-41-20.png) 3. `Spring Reactive Web` 의존성을 추가해준다.
 
-![](/assets/blog-images/posts/2025-03-11-blocking-io-vs-nonblocking-io/2025-03-12-15-42-21.png)
+![](/assets/blog-images/posts/2025-03-11-blocking-vs-non-blocking-io/2025-03-12-15-42-21.png)
 
 1. 프로젝트에 `TestController`, `TestResponse` 파일을 추가한다.
 

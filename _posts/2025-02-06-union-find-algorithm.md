@@ -1,9 +1,10 @@
 ---
 title: ⚙️ 유니온 파인드(서로소)
 date: 2025-02-06 17:36 +0900
+description: 유니온 파인드 자료구조의 핵심 개념, 연산 흐름, Kotlin 예제를 한 번에 설명.
 categories: [알고리즘]
-tags: [알고리즘, 개념]
-image: assets/blog-images/posts/2025-02-06-union-find-algorithm/title.png
+tags: [알고리즘, 자료구조]
+image: /assets/blog-images/posts/2025-02-06-union-find-algorithm/title.png
 mermaid: true
 ---
 

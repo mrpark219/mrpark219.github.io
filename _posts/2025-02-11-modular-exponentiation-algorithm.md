@@ -1,8 +1,9 @@
 ---
 title: ⚙️ 모듈러 거듭제곱 알고리즘
 date: 2025-02-11 22:12 +0900
+description: 모듈러 거듭제곱 알고리즘의 원리, 계산 예시, Kotlin 구현 코드를 쉽게 정리.
 categories: [알고리즘]
-tags: [알고리즘, 개념]
+tags: [알고리즘, 수학]
 image: /assets/blog-images/posts/2025-02-11-modular-exponentiation-algorithm/title.png
 math: true
 ---

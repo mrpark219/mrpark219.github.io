@@ -2,9 +2,10 @@
 title: SI 회사에서 GIT 도입, 이건 귀하군요
 date: 2024-01-31 21:00:00 +0900
 last_modified_at: 2024-01-31 21:00:00 +0900
-categories: []
-tags: [SI, GIT]
-image: /assets/blog-images/posts/2024-01-31-Implementing GIT in an SI Company/title.png
+description: SVN 중심 SI 조직에서 Git과 브랜치 전략을 도입한 실무 경험과 시행착오 정리.
+categories: [백엔드]
+tags: [git, 협업]
+image: /assets/blog-images/posts/2024-01-31-git-adoption-in-si-company/title.png
 ---
 
 SI 회사에서 `Git` 을 도입한지 1년이 지났다 `Svn` ➡️ `Git` 으로 전환하는 과정에 대한 경험을 공유하고자 한다.

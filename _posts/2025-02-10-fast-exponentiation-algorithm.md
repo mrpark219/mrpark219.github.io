@@ -1,8 +1,9 @@
 ---
 title: ⚙️ 빠른 거듭제곱 알고리즘
 date: 2025-02-10 22:27 +0900
+description: O(log N) 빠른 거듭제곱 알고리즘의 아이디어와 재귀, 반복문 구현 방법 정리.
 categories: [알고리즘]
-tags: [알고리즘, 개념]
+tags: [알고리즘, 수학]
 image: /assets/blog-images/posts/2025-02-10-fast-exponentiation-algorithm/title.png
 math: true
 ---

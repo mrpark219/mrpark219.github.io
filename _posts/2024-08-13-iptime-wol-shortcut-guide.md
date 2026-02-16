@@ -2,9 +2,10 @@
 title: ipTIME WOL in 아이폰 단축어(3세대 iUX 펌웨어)
 date: 2024-08-13 21:00:00 +0900
 last_modified_at: 2024-08-13 21:00:00 +0900
-categories: []
-tags: [단축어, 아이폰]
-image: /assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/title.png
+description: ipTIME 3세대 iUX 펌웨어 기준 아이폰 WOL 단축어 설정 방법과 오류 해결 가이드.
+categories: [개발팁]
+tags: [네트워크, 자동화]
+image: /assets/blog-images/posts/2024-08-13-iptime-wol-shortcut-guide/title.png
 ---
 
 ## 1. 단축어 공유
@@ -38,33 +39,33 @@ image: /assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-i
 
 ### 1. 단축어 추가 링크를 클릭하면 단축어 앱이 열리며 해당 화면이 나타난다. 단축어 설정 버튼을 터치한다.(안 열릴 시 사파리로 링크 열기)
 
-![](/assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/2025-02-02-23-38-58.png)
+![](/assets/blog-images/posts/2024-08-13-iptime-wol-shortcut-guide/2025-02-02-23-38-58.png)
 
 ### 2. ipTIME 관리자 사이트에 접근해서 동작하는 단축어이기 때문에 접속 정보를 작성한다.
 
-![](/assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/2025-02-02-23-39-11.png)
+![](/assets/blog-images/posts/2024-08-13-iptime-wol-shortcut-guide/2025-02-02-23-39-11.png)
 
 ipTIME DDNS 기능을 사용 중이라면 DDNS 주소와 외부 접속 포트 번호를 입력하면 되고, ip 주소를 통해 직접 접근 중이라면 ip 주소와 포트 번호를 입력하면 된다.
 
 ### 3. ipTIME 관리자 사이트에서 사용 중인 아이디를 입력한다.
 
-![](/assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/2025-02-02-23-39-19.png)
+![](/assets/blog-images/posts/2024-08-13-iptime-wol-shortcut-guide/2025-02-02-23-39-19.png)
 
 ### 4. ipTIME 관리자 사이트에서 사용 중인 비밀번호를 입력한다.
 
-![](/assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/2025-02-02-23-39-27.png)
+![](/assets/blog-images/posts/2024-08-13-iptime-wol-shortcut-guide/2025-02-02-23-39-27.png)
 
 ### 5. 추가가 완료되었다.
 
-![](/assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/2025-02-02-23-39-37.png)
+![](/assets/blog-images/posts/2024-08-13-iptime-wol-shortcut-guide/2025-02-02-23-39-37.png)
 
 ### 6. 실행 - WOL PC 목록을 확인하고 전원을 켤 PC를 선택한다.
 
-![](/assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/2025-02-02-23-39-44.png)
+![](/assets/blog-images/posts/2024-08-13-iptime-wol-shortcut-guide/2025-02-02-23-39-44.png)
 
 ### 7. 실행 - 실행 결과를 확인한다.
 
-![](/assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/2025-02-02-23-39-56.png)
+![](/assets/blog-images/posts/2024-08-13-iptime-wol-shortcut-guide/2025-02-02-23-39-56.png)
 
 ---
 
@@ -74,4 +75,4 @@ ipTIME DDNS 기능을 사용 중이라면 DDNS 주소와 외부 접속 포트 �
 
 "단축어가 리치 텍스트을(를) 사전(으)로 변환할 수 없기 때문에 사전 값 가져오기에 실패했습니다(Conversion Error Get Dictionary Value failed because Shortcuts couldn't convert from Rich .text to Dictionary)" 오류가 발생하는 경우가 있다. 해당 경우에는 iptime 공유기 관리자 사이트에 접근하여 `전체 메뉴` > `보안 기능` > `공유기 접속/보안관리` > `악성 스크립트 접근 방지(CSRF)` 기능를 꺼주면 된다.
 
-![](/assets/blog-images/posts/2024-08-13-iptime-wol-iphone-shortcut-3rd-gen-iux/2025-02-03-00-01-29.png)
+![](/assets/blog-images/posts/2024-08-13-iptime-wol-shortcut-guide/2025-02-03-00-01-29.png)
