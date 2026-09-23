@@ -4,15 +4,7 @@
 
 ## 로컬 실행
 
-Ruby와 Bundler를 설치한 뒤, 두 저장소를 같은 디렉터리에 배치합니다.
-
-```text
-workspace/
-├── jekyll-theme-yeobaek/
-└── mrpark219.github.io/
-```
-
-블로그 저장소에서 다음 명령을 실행합니다.
+Ruby와 Bundler를 설치한 뒤, 이 블로그 저장소에서 다음 명령을 실행합니다. `bundle install`은 [여백 테마의 `v0.1.0` 태그](https://github.com/mrpark219/jekyll-theme-yeobaek/tree/v0.1.0)를 GitHub에서 받아옵니다.
 
 ```sh
 bundle install

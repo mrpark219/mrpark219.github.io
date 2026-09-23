@@ -1,5 +1,7 @@
-PATH
-  remote: ../jekyll-theme-yeobaek
+GIT
+  remote: https://github.com/mrpark219/jekyll-theme-yeobaek.git
+  revision: 185daa98230bff3645927b653308c0faba8a7e58
+  tag: v0.1.0
   specs:
     jekyll-theme-yeobaek (0.1.0)
       jekyll (>= 4.3, < 5.0)
