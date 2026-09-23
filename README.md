@@ -13,6 +13,10 @@ bundle exec jekyll serve --livereload
 
 브라우저에서 <http://localhost:4000>을 열면 됩니다. 정적 파일만 생성하려면 `bundle exec jekyll build`를 실행합니다. 결과물은 `_site/`에 만들어집니다.
 
+## 배포
+
+`main` 브랜치에 푸시하면 [GitHub Actions](.github/workflows/pages.yml)가 GitHub의 여백 테마 `v0.1.0`을 설치해 블로그를 빌드하고 GitHub Pages에 배포합니다. 저장소의 **Settings → Pages → Build and deployment → Source**는 **GitHub Actions**로 설정합니다.
+
 ## 콘텐츠 수정
 
 - `_posts/`: 블로그 글. 파일 이름은 `YYYY-MM-DD-글주소.md` 형식입니다.
