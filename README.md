@@ -4,7 +4,7 @@
 
 ## 로컬 실행
 
-Ruby와 Bundler를 설치한 뒤, 이 블로그 저장소에서 다음 명령을 실행합니다. `bundle install`은 [여백 테마의 `v0.1.0` 태그](https://github.com/mrpark219/jekyll-theme-yeobaek/tree/v0.1.0)를 GitHub에서 받아옵니다.
+Ruby와 Bundler를 설치한 뒤, 이 블로그 저장소에서 다음 명령을 실행합니다. `bundle install`은 [여백 테마의 `v0.2.0` 태그](https://github.com/mrpark219/jekyll-theme-yeobaek/tree/v0.2.0)를 GitHub에서 받아옵니다.
 
 ```sh
 bundle install
@@ -15,7 +15,7 @@ bundle exec jekyll serve --livereload
 
 ## 배포
 
-`main` 브랜치에 푸시하면 [GitHub Actions](.github/workflows/pages.yml)가 GitHub의 여백 테마 `v0.1.0`을 설치해 블로그를 빌드하고 GitHub Pages에 배포합니다. 저장소의 **Settings → Pages → Build and deployment → Source**는 **GitHub Actions**로 설정합니다.
+`main` 브랜치에 푸시하면 [GitHub Actions](.github/workflows/pages.yml)가 GitHub의 여백 테마 `v0.2.0`을 설치해 블로그를 빌드하고 GitHub Pages에 배포합니다. 저장소의 **Settings → Pages → Build and deployment → Source**는 **GitHub Actions**로 설정합니다.
 
 ## 콘텐츠 수정
 
