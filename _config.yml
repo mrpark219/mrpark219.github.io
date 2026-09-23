@@ -1,0 +1,54 @@
+theme: jekyll-theme-yeobaek
+title: 박성환 | 백엔드 개발자
+description: 백엔드 개발자 박성환의 기술 블로그입니다. Spring Batch 배치 성능 개선, JPA 데이터 정합성, 예약·결제 연동 등 실무에서 겪은 문제와 해결 과정을 기록합니다.
+url: https://mrpark219.github.io
+baseurl: ""
+lang: ko-KR
+timezone: Asia/Seoul
+
+webmaster_verifications:
+  google: GsMB0ZpoiMhgzNYqSMET7-rXgduH5wGI3rEXS3SbV2E
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /posts/:title/
+      comments: true
+
+yeobaek:
+  brand: 박성환 / notes
+  owner: 박성환
+  role: Backend Engineer
+  intro_title: 안녕하세요, 박성환입니다.
+  intro: 예약·결제와 숙소 연동 서비스를 만들며 겪은 문제를 기록합니다. 배치 성능, 동시성, 데이터 정합성처럼 운영에서 마주친 주제를 다룹니다.
+  about_intro: 안녕하세요. 예약·결제와 숙소 연동 기능을 만드는 백엔드 개발자 박성환입니다. 운영에서 마주친 성능과 데이터 정합성 문제를 파고들고, 배운 점을 글로 남깁니다.
+  social:
+    - label: GitHub
+      url: https://github.com/mrpark219
+    - label: Email
+      url: mailto:mrpark219@gmail.com
+    - label: LinkedIn
+      url: https://www.linkedin.com/in/mrpark219/
+  comments:
+    repo: mrpark219/mrpark219.github.io
+    issue_term: url
+    label: comment
+  custom_css: /assets/css/custom.css
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
