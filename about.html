@@ -1,0 +1,180 @@
+---
+layout: default
+title: About
+description: 백엔드 개발자 박성환의 경력과 프로젝트 경험을 소개합니다. 예약·결제 연동, 배치 성능 개선, 데이터 정합성 문제 해결 경험을 확인할 수 있습니다.
+nav: about
+permalink: /about/
+---
+<div class="resume-doc">
+          
+            <div class="header-row">
+                <div class="header-left">
+                    <div>
+                        <div class="name-row">
+                            <h1 class="name">박성환</h1>
+                            <span class="role-badge">Backend Engineer</span>
+                        </div>
+                        <div class="tagline">{{ site.yeobaek.about_intro | escape }}</div>
+                    </div>
+                </div>
+                <div class="contact-block">
+                    <div><a href="https://github.com/mrpark219" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+                    <div><a href="mailto:mrpark219@gmail.com">Email ↗</a></div>
+                    <div><a href="https://www.linkedin.com/in/mrpark219/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
+                </div>
+            </div>
+
+            <section style="margin-bottom: 16px; break-inside: avoid">
+                <div class="section-label">Summary</div>
+                <div class="section-divider"></div>
+                <div class="summary-paragraphs">
+                    <p>
+                        저는 개발 범위와 트래픽, 운영 부담을 먼저 보고 기술과 구조를 고릅니다. 앱 메인에서는 1분 주기 갱신 요구와 트래픽 규모를 고려해 Caffeine 로컬 캐시를 선택했고,
+                        <strong>추가 인프라 없이 외부 API 호출로 인한 응답 지연을 줄였습니다.</strong> 결제·예약 연동에서는
+                        <strong>실패가 확실한 경우와 불확실한 경우를 구분</strong>해, 확정된 실패만 자동으로 보상했습니다.
+                    </p>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 16px">
+                <div class="section-label">Experience</div>
+                <div class="section-divider"></div>
+
+                <div class="entry-block">
+                    <div class="entry-header">
+                        <h3 class="entry-title">
+                            주식회사 반려생활
+                            <span class="entry-subtitle">- Backend Engineer - 정규직</span>
+                        </h3>
+                        <div class="entry-period">2025.04 - 현재</div>
+                    </div>
+                    <div class="entry-desc">
+                        반려동물 동반 숙소 예약 플랫폼. 3인 개발팀에서 CTO와 함께 백엔드를 맡아 결제·정산과 숙소 재고·가격·정책 관리 서비스를 개발하고, 외부 숙소 관리 시스템(PMS) 연동을 담당했습니다.
+                    </div>
+                    <div class="tech-line">
+                        <b>기술 스택</b> - Java - Kotlin - Spring Boot - Spring Batch - Spring AI - JPA/Hibernate - QueryDSL - MySQL - Redis - OpenSearch - AWS(ECS·SQS·S3) - Jenkins - Docker - Datadog
+                        - JUnit - k6 - JMeter
+                    </div>
+                    <ul class="bullets">
+                        <li>
+                            <strong>재고 동시성·오버부킹 해결</strong> - 비관적 락 적용 후에도 재고 1개가 0개로 갱신되는 동안 주문 N개가 생성되는 문제를 추적해,
+                            <strong>락 획득 전 조회한 상품 엔티티의 재사용</strong>을 원인으로 확인. refresh로 긴급 대응한 뒤 재고 차감 트랜잭션을 분리하고 동시성 테스트로 검증
+                            <span class="experience-references"
+                                >(<a class="experience-link" href="https://medium.com/post/33570ca77b56" target="_blank" rel="noopener noreferrer">https://medium.com/post/33570ca77b56</a>)</span
+                            >
+                        </li>
+                        <li>
+                            <strong>결제·예약 불일치 자동 보상</strong> - 결제 성공 후 예약이 실패한 경우, 오류 유형을 분류해 확실한 실패만 자동 보상하도록 구현. 결제 취소 직전에 예약 상태를
+                            재확인하고 결과가 불확실한 경우 자동 취소 대상에서 제외해 잘못된 취소를 방지
+                        </li>
+                        <li>
+                            <strong>숙소 연동 배치 재설계</strong> - 외부 API를 순차 호출하던 PHP 배치를 Spring Batch와 Virtual Thread 기반 병렬 처리로 전환해 평균 실행 시간을
+                            <strong>10시간 → 11분대(98% 단축)</strong>로 개선. 실행 파라미터로 처리 대상을 선택하고 재처리할 수 있도록 구현
+                            <span class="experience-references"
+                                >(<a class="experience-link" href="https://medium.com/post/f8d3ea5a12a5" target="_blank" rel="noopener noreferrer">https://medium.com/post/f8d3ea5a12a5</a> -
+                                <a class="experience-link" href="https://medium.com/post/0de21a8838f7" target="_blank" rel="noopener noreferrer">https://medium.com/post/0de21a8838f7</a>)</span
+                            >
+                        </li>
+                        <li>
+                            <strong>앱 메인 응답 시간 단축</strong> - 외부 숙소 관리 시스템(PMS) 호출을 요청 경로에서 제거하고 Caffeine 로컬 캐시를 1분마다 갱신. 기동 시 캐시를 웜업한 후 헬스 체크를
+                            통과하도록 구성. <strong>평균 응답 시간 1.18초 → 0.39초, P95 2.15초 → 0.75초</strong>로 단축
+                        </li>
+                        <li>
+                            <strong>멀티 PG 구조 전환</strong> - 빌링 시스템의 PG 요청 부분을 추상화하고 신규 PG를 연동. PG별 결제 트래픽 비율을 동적으로 조절하는 밸런서를 설계·개발해 여러 PG로 결제를
+                            분산하도록 구현
+                        </li>
+                        <li>
+                            <strong>정산 모델 확장</strong> - 서비스 단위 2종에서 채널·상품 유형 단위 5종으로 확장. 정산 키를 선택값에서 필수값으로 단계적으로 전환하며
+                            <strong>서비스 중단 없이 스키마 변경과 기존 데이터 백필</strong>을 수행하고 데이터 정합성 검증
+                        </li>
+                        <li>
+                            <strong>가용 재고 동기화 개선</strong> - 새벽 전체 동기화 이후, 사용자 조회 데이터를 테이블에 쌓아 5분마다 Spring Batch로 반영하던 방식을 SQS 이벤트 처리로 전환. 추가 PMS
+                            호출 없이 조회된 숙소의 <strong>재고 반영 지연을 5분 → 수 초</strong>로 단축
+                        </li>
+                        <li>
+                            <strong>AI 기반 정책 검수 자동화</strong> - 성수기마다 수동 재검수하던 숙소별 반려동물 정책을 변경 이력과 LLM으로 비교해 검토 후보를 선별. 표현만 달라진 정책을 걸러
+                            <strong>검토 후보 중 실제 변경이 없는 비율을 69.9% → 2.7%</strong>로 낮추고, 최종 승인은 담당자가 수행하도록 설계
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="entry-block print-page-start">
+                    <div class="print-continuation">
+                        <div class="section-label">Experience - Continued</div>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="entry-header">
+                        <h3 class="entry-title">
+                            주식회사 네오그라프
+                            <span class="entry-subtitle">- Backend Developer - 정규직</span>
+                        </h3>
+                        <div class="entry-period">2019.12 - 2024.03 (4년 4개월)</div>
+                    </div>
+                    <div class="entry-desc">
+                        공공기관·기업 대상 SI 프로젝트와 사내 CMS 솔루션(N-CMS)의 코어 개발을 담당했습니다. 일부 프로젝트에서 3~5인 개발팀을 이끌며 업무 배분과 일정 조율을 맡아 기한 내 완료했습니다.
+                    </div>
+                    <div class="tech-line"><b>기술 스택</b> - Java - Spring - JSP - MyBatis - MySQL - Docker - SVN → Git</div>
+                    <ul class="bullets">
+                        <li>
+                            <strong>N-CMS 메뉴·권한 모듈 공통화</strong> - 프로젝트별로 중복 구현하던 기능을 모듈화하고 권한 연산 결과를 캐싱해, 관리자 로그인 시 메뉴·권한 조회 API의
+                            <strong>응답 시간을 800ms → 300ms(62.5% 단축)</strong>로 개선. 권한 변경 시 캐시를 무효화하도록 구현
+                        </li>
+                        <li>
+                            <strong>운영 DB 부하 분산·개발 환경 개선</strong> - MySQL 복제로 조회 부하를 분산하고, Docker로 로컬·운영 환경 차이에 따른 오류와 설정 시간을 줄임. SVN에서 Git으로 전환하고
+                            브랜치·PR 기반 코드 리뷰 도입
+                        </li>
+                        <li><strong>전자동의서 변경 검증</strong> - 서명 완료 시점의 PDF SHA-256 해시값을 저장하고, 이후 파일의 해시값과 비교해 문서 변경 여부를 검증하도록 구현</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 16px; break-inside: avoid">
+                <div class="section-label">AI &amp; Workflow</div>
+                <div class="section-divider"></div>
+                <p class="entry-desc" style="margin-bottom: 0; line-height: 1.8">
+                    구현 전 AI와 요구사항·예외 상황을 정리하고 설계 대안을 비교합니다. 코드베이스 탐색부터 구현·리팩터링·테스트·리뷰까지 AI를 활용하며, 제안된 코드와 설계는
+                    <strong>도메인 규칙·기존 코드·테스트 결과를 대조해 검증</strong>합니다. 채택 여부와 구현 방향은 직접 판단합니다.
+                </p>
+            </section>
+
+            <section style="margin-bottom: 16px">
+                <div class="section-label">Activities</div>
+                <div class="section-divider"></div>
+
+                <div style="break-inside: avoid">
+                    <div class="entry-header" style="margin-bottom: 5px">
+                        <h3 class="sub-title" style="margin-bottom: 0">구름톤(9oormthon in JEJU) 12기 - 우수상</h3>
+                        <div class="entry-period">2024</div>
+                    </div>
+                    <ul class="bullets">
+                        <li>
+                            제주 이주 은퇴자를 위한 커뮤니티 서비스의 핵심 기능을 1박 2일 일정에 맞춰 MVP로 개발. 백엔드 개발과 DKOS(Kakao D2Hub, Kargo) 기반 배포를 담당해 시연을 완료하고 우수상 수상
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 16px; break-inside: avoid">
+                <div class="section-label">Education &amp; Certifications</div>
+                <div class="section-divider"></div>
+                <div class="two-col">
+                    <div>
+                        <div class="fact-row">
+                            <div class="fact-label">한국공학대학교 - 컴퓨터전자공학과 - 학사</div>
+                            <div class="fact-date">2020.03 - 2024.02</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fact-row">
+                            <div class="fact-label">정보처리기사 - 한국산업인력공단</div>
+                            <div class="fact-date">2023.06</div>
+                        </div>
+                        <div class="fact-row">
+                            <div class="fact-label">일학습병행자격 SW개발 L5 - 한국산업인력공단</div>
+                            <div class="fact-date">2023.08</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+        </div>
