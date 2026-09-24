@@ -4,7 +4,7 @@
 
 ## 로컬 실행
 
-Ruby와 Bundler를 설치한 뒤, 이 블로그 저장소에서 다음 명령을 실행합니다. `bundle install`은 [여백 테마의 `v0.2.1` 태그](https://github.com/mrpark219/jekyll-theme-yeobaek/tree/v0.2.1)를 GitHub에서 받아옵니다.
+Ruby와 Bundler를 설치한 뒤, 이 블로그 저장소에서 다음 명령을 실행합니다. `bundle install`은 [여백 테마의 `v0.2.2` 태그](https://github.com/mrpark219/jekyll-theme-yeobaek/tree/v0.2.2)를 GitHub에서 받아옵니다.
 
 ```sh
 bundle install
@@ -15,7 +15,7 @@ bundle exec jekyll serve --livereload
 
 ## 배포
 
-`main` 브랜치에 푸시하면 [GitHub Actions](.github/workflows/pages.yml)가 GitHub의 여백 테마 `v0.2.1`을 설치해 블로그를 빌드하고 GitHub Pages에 배포합니다. 저장소의 **Settings → Pages → Build and deployment → Source**는 **GitHub Actions**로 설정합니다.
+`main` 브랜치에 푸시하면 [GitHub Actions](.github/workflows/pages.yml)가 GitHub의 여백 테마 `v0.2.2`를 설치해 블로그를 빌드하고 GitHub Pages에 배포합니다. 저장소의 **Settings → Pages → Build and deployment → Source**는 **GitHub Actions**로 설정합니다.
 
 ## 콘텐츠 수정
 
@@ -25,7 +25,7 @@ bundle exec jekyll serve --livereload
 - `_config.yml`: 사이트 소개, 연락처, 댓글, SEO 설정.
 - `assets/css/custom.css`: 이 블로그에서만 적용하는 스타일.
 
-새 글에는 제목, 날짜, 설명을 front matter에 작성합니다. 글 주소는 기본적으로 `/posts/글주소/` 형식입니다. 테마의 스타일과 레이아웃을 바꾸는 방법은 [여백 테마 README](https://github.com/mrpark219/jekyll-theme-yeobaek#readme)를 참고하세요.
+새 글에는 제목, 날짜, 설명을 front matter에 작성합니다. 홈과 Posts 목록의 글 썸네일은 글 맨 위 `---` 사이에 적은 `image`에서 가져옵니다. 홈의 외부 링크 썸네일은 `_data/featured.yml`의 `thumbnail`에서 가져옵니다. 글 주소는 기본적으로 `/posts/글주소/` 형식입니다. 테마의 스타일과 레이아웃을 바꾸는 방법은 [여백 테마 README](https://github.com/mrpark219/jekyll-theme-yeobaek#readme)를 참고하세요.
 
 ## 검색 엔진 관련 설정
 
