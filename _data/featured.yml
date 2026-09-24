@@ -2,11 +2,14 @@
   title: Spring Batch 6 병렬 배치 마이그레이션
   description: 청크에서 아이템으로 바뀐 동시성 단위를 살펴본 마이그레이션 기록입니다.
   url: https://blog.ban-life.com/병렬-배치-마이그레이션기-spring-batch-6-동시성의-단위가-청크에서-아이템으로-바뀌었다-0de21a8838f7
+  favicon: https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png
 - type: link
   title: 락을 걸었는데도 발생한 오버부킹
   description: 오버부킹 문제와 JPA 1차 캐시의 관계를 다룬 글입니다.
   url: https://blog.ban-life.com/락-lock-을-걸었는데-왜-오버부킹이-날까-jpa-1차-캐시의-함정-탈출기-33570ca77b56
+  favicon: https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png
 - type: link
   title: 숙소 연동 배치, 10시간에서 20분으로
   description: Spring Batch 기반 숙소 연동 작업의 실행 시간을 줄인 과정을 정리했습니다.
   url: https://blog.ban-life.com/새벽에-시작한-배치가-퇴근할-때-끝난다면-10시간짜리-숙소-연동-배치-20분-만에-끝낸-이야기-spring-batch-f8d3ea5a12a5
+  favicon: https://miro.medium.com/1*m-R_BkNf1Qjr1YbyOIJY2w.png
