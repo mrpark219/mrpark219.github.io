@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/mrpark219/jekyll-theme-yeobaek.git
-  revision: 9e22bd3bfd35df96a553c1cdaafeece9900e9ab6
-  tag: v0.2.2
+  revision: 754d8c93e91e735273490bf6eaf96ad7ea155566
+  tag: v0.2.3
   specs:
-    jekyll-theme-yeobaek (0.2.2)
+    jekyll-theme-yeobaek (0.2.3)
       jekyll (>= 4.3, < 5.0)
 
 GEM
