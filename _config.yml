@@ -21,6 +21,14 @@ kramdown:
 defaults:
   - scope:
       path: ""
+    values:
+      image:
+        path: /assets/og/default.png
+        width: 1200
+        height: 630
+        alt: 박성환의 백엔드 개발 기록
+  - scope:
+      path: ""
       type: posts
     values:
       layout: post

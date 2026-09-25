@@ -23,10 +23,11 @@ bundle exec jekyll serve --livereload
 - `about.html`: 소개와 이력서.
 - `_data/featured.yml`: 홈의 대표 글과 외부 링크. 위에서부터 표시됩니다.
 - `_config.yml`: 사이트 소개, 연락처, 댓글, SEO 설정.
+- `assets/og/default.png`: 홈·목록·소개와 이미지가 없는 글의 기본 공유 이미지.
 - `assets/css/custom.css`: 이 블로그에서만 적용하는 스타일.
 
 새 글에는 제목, 날짜, 설명을 front matter에 작성합니다. 홈과 Posts 목록의 글 썸네일은 글 맨 위 `---` 사이에 적은 `image`에서 가져옵니다. 홈의 외부 링크 썸네일은 `_data/featured.yml`의 `thumbnail`에서 가져옵니다. 글 주소는 기본적으로 `/posts/글주소/` 형식입니다. 테마의 스타일과 레이아웃을 바꾸는 방법은 [여백 테마 README](https://github.com/mrpark219/jekyll-theme-yeobaek#readme)를 참고하세요.
 
 ## 검색 엔진 관련 설정
 
-`jekyll-seo-tag`가 페이지 메타데이터를, `jekyll-sitemap`이 `/sitemap.xml`을 생성합니다. 여백 테마가 `/robots.txt`를 제공하고 사이트맵 위치를 안내합니다. 공개 후에는 Google Search Console에서 사이트맵을 제출하고 URL 검사로 크롤링 상태를 확인합니다. 색인 여부는 Google이 결정합니다.
+`jekyll-seo-tag`가 페이지 메타데이터를, `jekyll-sitemap`이 `/sitemap.xml`을 생성합니다. `_config.yml`의 기본 `image`는 1200×630 공유 이미지로 사용하며, 각 글의 front matter에 `image`가 있으면 그 이미지를 우선 사용합니다. 여백 테마가 `/robots.txt`를 제공하고 사이트맵 위치를 안내합니다. 공개 후에는 Google Search Console에서 사이트맵을 제출하고 URL 검사로 크롤링 상태를 확인합니다. 색인 여부는 Google이 결정합니다.
