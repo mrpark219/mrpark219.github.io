@@ -4,6 +4,11 @@ date: 2026-10-10 23:46:28 +0900
 description: ECS 배포 중 기존 서버의 요청 처리와 백그라운드 작업이 어떻게 마무리되는지 알아본다.
 categories: [백엔드]
 tags: [백엔드, Spring Boot, AWS, ECS, SQS, graceful shutdown]
+image:
+  path: /assets/blog-images/posts/2026-10-10-ecs-graceful-shutdown-sigterm-to-sigkill/title.png
+  width: 1733
+  height: 907
+  alt: ECS 배포 중 기존 Spring Boot 컨테이너가 작업을 마무리하고 새 컨테이너로 전환하는 모습
 mermaid: true
 ---
 
