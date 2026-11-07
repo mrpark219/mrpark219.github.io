@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About
-description: 백엔드 개발자 박성환의 경력과 프로젝트 경험을 소개합니다. 예약·결제 연동, 배치 성능 개선, 데이터 정합성 문제 해결 경험을 확인할 수 있습니다.
+description: 백엔드 개발자 박성환의 경력과 프로젝트를 소개합니다. 예약 실패 시 결제 취소 자동화, 재고 정합성 개선, 숙소 연동 배치와 AI 기반 정책 검수 경험을 정리했습니다.
 nav: about
 permalink: /about/
 ---
@@ -12,7 +12,7 @@ permalink: /about/
                     <div>
                         <div class="name-row">
                             <h1 class="name">박성환</h1>
-                            <span class="role-badge">Backend Engineer</span>
+                            <span class="role-badge">Backend Developer</span>
                         </div>
                         <div class="tagline">{{ site.yeobaek.about_intro | escape }}</div>
                     </div>
@@ -29,9 +29,11 @@ permalink: /about/
                 <div class="section-divider"></div>
                 <div class="summary-paragraphs">
                     <p>
-                        저는 개발 범위와 트래픽, 운영 부담을 먼저 보고 기술과 구조를 고릅니다. 앱 메인에서는 1분 주기 갱신 요구와 트래픽 규모를 고려해 Caffeine 로컬 캐시를 선택했고,
-                        <strong>추가 인프라 없이 외부 API 호출로 인한 응답 지연을 줄였습니다.</strong> 결제·예약 연동에서는
-                        <strong>실패가 확실한 경우와 불확실한 경우를 구분</strong>해, 확정된 실패만 자동으로 보상했습니다.
+                        예약·결제·정산과 숙소 관리 시스템(PMS) 연동을 개발하며, 운영 중 발생하는 데이터 불일치와 반복적인 수작업을 줄여 왔습니다.
+                    </p>
+                    <p>
+                        예약 실패 시 결제 취소를 자동화하고, 대사 배치에서 발견한 취소 누락 건도 처리하도록 구현했습니다.
+                        성수기마다 수동으로 진행하던 숙소 정책 검수는 AI가 매일 변경 후보를 찾고 운영자가 최종 승인하는 방식으로 전환했습니다.
                     </p>
                 </div>
             </section>
@@ -44,56 +46,61 @@ permalink: /about/
                     <div class="entry-header">
                         <h3 class="entry-title">
                             주식회사 반려생활
-                            <span class="entry-subtitle">- Backend Engineer - 정규직</span>
+                            <span class="entry-subtitle">- Product Engineer - 정규직</span>
                         </h3>
                         <div class="entry-period">2025.04 - 현재</div>
                     </div>
                     <div class="entry-desc">
-                        반려동물 동반 숙소 예약 플랫폼. 3인 개발팀에서 CTO와 함께 백엔드를 맡아 결제·정산과 숙소 재고·가격·정책 관리 서비스를 개발하고, 외부 숙소 관리 시스템(PMS) 연동을 담당했습니다.
+                        반려동물 동반 숙소 예약 플랫폼의 3인 개발팀에서 CTO와 함께 백엔드를 맡았습니다. 숙소 예약, 내부 PMS인 스테이 시스템, 빌링 시스템의 결제·정산 기능을 개발하고 운영했습니다.
                     </div>
                     <div class="tech-line">
-                        <b>기술 스택</b> - Java - Kotlin - Spring Boot - Spring Batch - Spring AI - JPA/Hibernate - QueryDSL - MySQL - Redis - OpenSearch - AWS(ECS·SQS·S3) - Jenkins - Docker - Datadog
-                        - JUnit - k6 - JMeter
+                        <b>기술 스택</b> - Java - Spring Boot - Spring Batch - Spring AI - JPA/Hibernate - QueryDSL - MySQL - Redis - Caffeine - OpenSearch
+                        - AWS(ECS·SQS·S3) - Jenkins - Docker - Datadog - Pinpoint - JUnit - k6
                     </div>
                     <ul class="bullets">
                         <li>
-                            <strong>재고 동시성·오버부킹 해결</strong> - 비관적 락 적용 후에도 재고 1개가 0개로 갱신되는 동안 주문 N개가 생성되는 문제를 추적해,
-                            <strong>락 획득 전 조회한 상품 엔티티의 재사용</strong>을 원인으로 확인. refresh로 긴급 대응한 뒤 재고 차감 트랜잭션을 분리하고 동시성 테스트로 검증
+                            <strong>재고 초과 판매 해결 및 주문 처리 성능 개선</strong> - 비관적 락 적용 후에도 초과 판매가 발생한 원인을 JPA 1차 캐시에서 확인했습니다.
+                            결제 상태 저장을 분리하고 재고 차감과 주문 생성을 하나의 트랜잭션으로 처리했습니다. 외부 알림을 비동기로 분리해 락 점유 시간을 줄였고,
+                            베타 서버 k6 부하 테스트에서 주문 완료 처리량을 <strong>15.5 → 218 TPS</strong>로 높였습니다.
                             <span class="experience-references"
                                 >(<a class="experience-link" href="https://blog.ban-life.com/락-lock-을-걸었는데-왜-오버부킹이-날까-jpa-1차-캐시의-함정-탈출기-33570ca77b56" target="_blank" rel="noopener noreferrer">오버부킹과 JPA 1차 캐시 분석 ↗</a>)</span
                             >
                         </li>
                         <li>
-                            <strong>결제·예약 불일치 자동 보상</strong> - 결제 성공 후 예약이 실패한 경우, 오류 유형을 분류해 확실한 실패만 자동 보상하도록 구현. 결제 취소 직전에 예약 상태를
-                            재확인하고 결과가 불확실한 경우 자동 취소 대상에서 제외해 잘못된 취소를 방지
+                            <strong>숙소 예약 실패 시 결제 취소 자동화</strong> - 명시적인 예약 실패는 즉시 취소하고, 5xx나 타임아웃으로 결과가 불확실하면 PMS에서 활성 예약이 없음을 확인한 뒤 취소했습니다.
+                            취소 키로 중복 처리를 막고, SQS로 취소 요청을 처리하며 DLQ와 Slack 알림으로 실패 건을 관리했습니다. 대사 배치에서 찾은 취소 누락 건도 같은 흐름으로 처리했습니다.
                         </li>
                         <li>
-                            <strong>숙소 연동 배치 재설계</strong> - 외부 API를 순차 호출하던 PHP 배치를 Spring Batch와 Virtual Thread 기반 병렬 처리로 전환해 평균 실행 시간을
-                            <strong>10시간 → 11분대(98% 단축)</strong>로 개선. 실행 파라미터로 처리 대상을 선택하고 재처리할 수 있도록 구현
+                            <strong>숙소 연동 배치 재설계 및 운영 안정화</strong> - PMS별 PHP 배치를 Spring Batch로 통합했습니다. 연동사별 API 동시 호출 수를 제한해 병렬 처리하고,
+                            이미지 업로드에 Virtual Thread를 적용해 약 7만 2천 개 숙소의 전체 연동 시간을 <strong>평균 10시간 → 11분대</strong>로 줄였습니다.
+                            일시적 오류를 재시도하고 실패한 숙소만 다시 처리할 수 있도록 구현했습니다.
                             <span class="experience-references"
                                 >(<a class="experience-link" href="https://blog.ban-life.com/새벽에-시작한-배치가-퇴근할-때-끝난다면-10시간짜리-숙소-연동-배치-20분-만에-끝낸-이야기-spring-batch-f8d3ea5a12a5" target="_blank" rel="noopener noreferrer">숙소 연동 배치 개선 ↗</a> ·
                                 <a class="experience-link" href="https://blog.ban-life.com/병렬-배치-마이그레이션기-spring-batch-6-동시성의-단위가-청크에서-아이템으로-바뀌었다-0de21a8838f7" target="_blank" rel="noopener noreferrer">Spring Batch 6 마이그레이션 ↗</a>)</span
                             >
                         </li>
                         <li>
-                            <strong>앱 메인 응답 시간 단축</strong> - 외부 숙소 관리 시스템(PMS) 호출을 요청 경로에서 제거하고 Caffeine 로컬 캐시를 1분마다 갱신. 기동 시 캐시를 웜업한 후 헬스 체크를
-                            통과하도록 구성. <strong>평균 응답 시간 1.18초 → 0.39초, P95 2.15초 → 0.75초</strong>로 단축
+                            <strong>AI 기반 숙소 반려동물 정책 검수</strong> - Hibernate Envers로 원문 변경을 추적하고, 변경 감지 모델(JEV)이 항목별 변경을 판별하면 LLM이 바뀐 항목을 요약하도록 설계했습니다.
+                            운영자가 최종 승인하는 일일 검수 흐름을 구축해 <strong>실제 변경이 없는 검수 후보 비율을 69.9% → 2.7%</strong>로 낮추고, 건당 외부 AI API 비용을 <strong>70% 절감</strong>했습니다.
                         </li>
                         <li>
-                            <strong>멀티 PG 구조 전환</strong> - 빌링 시스템의 PG 요청 부분을 추상화하고 신규 PG를 연동. PG별 결제 트래픽 비율을 동적으로 조절하는 밸런서를 설계·개발해 여러 PG로 결제를
-                            분산하도록 구현
+                            <strong>SQS 기반 가용 재고 동기화</strong> - 5분 주기 배치를 SQS 이벤트 처리로 전환하고, 재고 관측 시각을 비교해 오래된 이벤트가 최신 데이터를 덮어쓰지 않도록 했습니다.
+                            PMS 추가 호출 없이 조회 결과를 재사용했으며, 운영 데이터 약 17만 행 중 <strong>96.7%가 10초 이내</strong>에 반영됐습니다.
                         </li>
                         <li>
-                            <strong>정산 모델 확장</strong> - 서비스 단위 2종에서 채널·상품 유형 단위 5종으로 확장. 정산 키를 선택값에서 필수값으로 단계적으로 전환하며
-                            <strong>서비스 중단 없이 스키마 변경과 기존 데이터 백필</strong>을 수행하고 데이터 정합성 검증
+                            <strong>정산 기준 세분화와 무중단 전환</strong> - 앱·웹 기준의 정산 구분을 숙소·상품까지 세분화했습니다.
+                            새 구분값을 선택 항목으로 배포한 뒤 기존 데이터를 백필하고, 호출 서비스의 전환을 확인한 후 필수 항목으로 변경했습니다.
                         </li>
                         <li>
-                            <strong>가용 재고 동기화 개선</strong> - 새벽 전체 동기화 이후, 사용자 조회 데이터를 테이블에 쌓아 5분마다 Spring Batch로 반영하던 방식을 SQS 이벤트 처리로 전환. 추가 PMS
-                            호출 없이 조회된 숙소의 <strong>재고 반영 지연을 5분 → 수 초</strong>로 단축
+                            <strong>결제수단 확장 및 멀티 PG 운영</strong> - 신규 PG와 간편결제를 연동하고, 운영자가 결제수단·채널별 PG 요청 비율을 조정할 수 있도록 구현했습니다.
+                            도입 후 11개월간 <strong>간편결제 완료율은 73.8%</strong>로 카드 결제보다 8.3%p 높았습니다.
                         </li>
                         <li>
-                            <strong>AI 기반 정책 검수 자동화</strong> - 성수기마다 수동 재검수하던 숙소별 반려동물 정책을 변경 이력과 LLM으로 비교해 검토 후보를 선별. 표현만 달라진 정책을 걸러
-                            <strong>검토 후보 중 실제 변경이 없는 비율을 69.9% → 2.7%</strong>로 낮추고, 최종 승인은 담당자가 수행하도록 설계
+                            <strong>앱 메인 응답 시간 단축</strong> - Pinpoint로 PMS 실시간 가격 조회 병목을 확인했습니다. Caffeine 로컬 캐시를 1분마다 갱신하고 기동 시 캐시를 미리 채워
+                            <strong>평균 응답 시간 1.18초 → 0.39초, P95 2.15초 → 0.75초</strong>로 줄였습니다.
+                        </li>
+                        <li>
+                            <strong>예약 가능 범위 확대</strong> - 당일 체크인 예약을 도입하고 일부 PMS 객실의 예약 가능 인원 조건을 개선해 <strong>1년간 약 2,700건</strong>의 예약을 추가 확보했습니다.
                         </li>
                     </ul>
                 </div>
@@ -116,24 +123,23 @@ permalink: /about/
                     <div class="tech-line"><b>기술 스택</b> - Java - Spring - JSP - MyBatis - MySQL - Docker - SVN → Git</div>
                     <ul class="bullets">
                         <li>
-                            <strong>N-CMS 메뉴·권한 모듈 공통화</strong> - 프로젝트별로 중복 구현하던 기능을 모듈화하고 권한 연산 결과를 캐싱해, 관리자 로그인 시 메뉴·권한 조회 API의
-                            <strong>응답 시간을 800ms → 300ms(62.5% 단축)</strong>로 개선. 권한 변경 시 캐시를 무효화하도록 구현
+                            <strong>N-CMS 공통화 및 개발·운영 환경 개선</strong> - 메뉴·권한 기능을 공통화하고 권한이 변경되면 캐시를 무효화하도록 구현했습니다.
+                            MySQL 복제로 읽기 요청을 분산하고, Docker로 개발 환경을 표준화했습니다. SVN에서 Git으로 전환하고 PR 기반 코드 리뷰를 도입했습니다.
                         </li>
                         <li>
-                            <strong>운영 DB 부하 분산·개발 환경 개선</strong> - MySQL 복제로 조회 부하를 분산하고, Docker로 로컬·운영 환경 차이에 따른 오류와 설정 시간을 줄임. SVN에서 Git으로 전환하고
-                            브랜치·PR 기반 코드 리뷰 도입
+                            <strong>도봉구청 제안서 평가 시스템 구축</strong> - 개발 리드(PL)로서 매주 기능과 업무 맥락을 공유하는 시간을 운영해 담당자 변경에 대응했습니다.
+                            QA 중 추가된 SSO 로그인 요구사항의 구현 범위를 조율하고 일정 내 전환을 완료했습니다.
                         </li>
-                        <li><strong>전자동의서 변경 검증</strong> - 서명 완료 시점의 PDF SHA-256 해시값을 저장하고, 이후 파일의 해시값과 비교해 문서 변경 여부를 검증하도록 구현</li>
                     </ul>
                 </div>
             </section>
 
             <section style="margin-bottom: 16px; break-inside: avoid">
-                <div class="section-label">AI &amp; Workflow</div>
+                <div class="section-label">AI Development Workflow</div>
                 <div class="section-divider"></div>
                 <p class="entry-desc" style="margin-bottom: 0; line-height: 1.8">
-                    구현 전 AI와 요구사항·예외 상황을 정리하고 설계 대안을 비교합니다. 코드베이스 탐색부터 구현·리팩터링·테스트·리뷰까지 AI를 활용하며, 제안된 코드와 설계는
-                    <strong>도메인 규칙·기존 코드·테스트 결과를 대조해 검증</strong>합니다. 채택 여부와 구현 방향은 직접 판단합니다.
+                    요구사항을 구체화하는 단계부터 설계와 구현까지 AI를 활용합니다. 여러 접근 방식의 장단점을 비교하고, 실제 적용 여부는
+                    <strong>도메인 규칙과 측정·테스트 결과를 바탕으로 판단</strong>합니다. 반복적인 운영 업무를 자동화할 방법도 함께 탐색합니다.
                 </p>
             </section>
 
@@ -160,8 +166,12 @@ permalink: /about/
                 <div class="two-col">
                     <div>
                         <div class="fact-row">
-                            <div class="fact-label">한국공학대학교 - 컴퓨터전자공학과 - 학사</div>
+                            <div class="fact-label">한국공학대학교 - 컴퓨터전자공학과 - 학사 (4.38 / 4.5)</div>
                             <div class="fact-date">2020.03 - 2024.02</div>
+                        </div>
+                        <div class="fact-row">
+                            <div class="fact-label">서울로봇고등학교 - 첨단로봇과</div>
+                            <div class="fact-date">2017.03 - 2020.02</div>
                         </div>
                     </div>
                     <div>
